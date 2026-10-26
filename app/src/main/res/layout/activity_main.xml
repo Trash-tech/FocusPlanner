@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fp_background"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingTop="24dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="28dp">
+
+            <!-- Шапка -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/dateLabel"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans"
+                        android:letterSpacing="0.07"
+                        android:text="ПОНЕДЕЛЬНИК, 26 ОКТЯБРЯ"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Мой день"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="31sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="Планируй, учись, успевай"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="13sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/fp_avatar"
+                    android:gravity="center"
+                    android:text="Я"
+                    android:textColor="@color/fp_primary"
+                    android:textSize="21sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Главная карточка прогресса -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/fp_progress_card"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:letterSpacing="0.1"
+                        android:text="ТВОЙ ПРОГРЕСС"
+                        android:textColor="#E8E7FF"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="НА ЭТУ НЕДЕЛЮ"
+                        android:textColor="#E8E7FF"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/progressText"
+                    android:text="7 из 10 задач"
+                    android:textColor="@android:color/white"
+                    android:textSize="27sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Отличный темп, продолжай!"
+                    android:textColor="#F0EFFF"
+                    android:textSize="13sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="9dp"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/fp_progress_track"
+                    android:orientation="horizontal">
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/progressFill"
+                        android:layout_weight="7"
+                        android:background="@drawable/fp_progress_fill" />
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:id="@+id/progressRest"
+                        android:layout_weight="3" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:id="@+id/progressPercentText"
+                        android:text="70% выполнено"
+                        android:textColor="@android:color/white"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/progressRemainingText"
+                        android:text="Осталось 3 дела"
+                        android:textColor="#E8E7FF"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Быстрый доступ -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Быстрый доступ"
+                android:textColor="@color/fp_ink"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/cardNotes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/fp_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minHeight="112dp"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:contentDescription="Заметки"
+                        android:src="@drawable/fp_ic_note" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Заметки"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="12 записей"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/cardProjects"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/fp_card"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:minHeight="112dp"
+                    android:orientation="vertical"
+                    android:padding="14dp">
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:contentDescription="Проекты"
+                        android:src="@drawable/fp_ic_folder" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Проекты"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:text="3 активных"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Список дел на сегодня -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Задачи на сегодня"
+                    android:textColor="@color/fp_ink"
+                    android:textSize="19sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/allTasks"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="Все задачи"
+                    android:textColor="@color/fp_primary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/fp_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/fp_mark_orange" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="2"
+                        android:text="Сдать лабораторную №6"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="МиСПИСиТ"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/fp_pill_orange"
+                    android:paddingStart="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="7dp"
+                    android:text="20:00"
+                    android:textColor="@color/fp_orange_text"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/fp_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/fp_mark_purple" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Повторить Kotlin"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Функции и коллекции"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/fp_pill_purple"
+                    android:paddingStart="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="7dp"
+                    android:text="18:30"
+                    android:textColor="@color/fp_primary"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/fp_card"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp">
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/fp_mark_green" />
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Прочитать главу по ОС"
+                        android:textColor="@color/fp_ink"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:text="Теория • 25 минут"
+                        android:textColor="@color/fp_muted"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/fp_pill_green"
+                    android:paddingStart="10dp"
+                    android:paddingTop="7dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="7dp"
+                    android:text="Готово"
+                    android:textColor="@color/fp_green_text"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Дополнительный блок, чтобы экран был полноценным -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Ближайшая пара"
+                android:textColor="@color/fp_ink"
+                android:textSize="19sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/lessonCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/fp_lesson_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:orientation="vertical"
+                android:padding="18dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="РАСПИСАНИЕ"
+                        android:textColor="@color/fp_primary"
+                        android:textSize="11sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="16:55 – 18:30"
+                        android:textColor="@color/fp_primary"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:text="Разработка мобильных приложений"
+                    android:textColor="@color/fp_ink"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="7dp"
+                    android:text="Практика • аудитория 297"
+                    android:textColor="@color/fp_muted"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/addTask"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fp_primary_button"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:text="+   Добавить задачу"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Нижняя навигация закреплена, контент над ней прокручивается -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fp_border" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Главная"
+                android:src="@drawable/fp_ic_home" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Главная"
+                android:textColor="@color/fp_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/navTasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Задачи"
+                android:src="@drawable/fp_ic_tasks" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Задачи"
+                android:textColor="@color/fp_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/navProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:contentDescription="Профиль"
+                android:src="@drawable/fp_ic_profile" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Профиль"
+                android:textColor="@color/fp_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

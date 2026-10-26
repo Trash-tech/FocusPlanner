@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fp_background">#F6F7FC</color>
+    <color name="fp_ink">#1C2341</color>
+    <color name="fp_muted">#8790A3</color>
+    <color name="fp_primary">#655FE2</color>
+    <color name="fp_border">#E8EAF2</color>
+    <color name="fp_orange_text">#B66A32</color>
+    <color name="fp_green_text">#26946C</color>
+</resources>

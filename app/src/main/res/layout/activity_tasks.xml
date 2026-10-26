@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fp_background">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="22dp"
+            android:paddingBottom="28dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/tasksBack"
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/fp_round_button"
+                    android:gravity="center"
+                    android:text="‹"
+                    android:contentDescription="Вернуться на главную"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:textColor="@color/fp_primary"
+                    android:textSize="34sp" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="МОЙ ПЛАНИРОВЩИК"
+                    android:textColor="@color/fp_muted"
+                    android:letterSpacing="0.07"
+                    android:textSize="11sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/fp_avatar"
+                    android:gravity="center"
+                    android:text="Я"
+                    android:textColor="@color/fp_primary"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:text="Все задачи"
+                android:textColor="@color/fp_ink"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Маленькие шаги ведут к большим целям ✦"
+                android:textColor="@color/fp_muted"
+                android:textSize="13sp" />
+
+            <!-- Контрастная инфокарточка с динамическим количеством дел -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/fp_stat_card"
+                android:orientation="vertical"
+                android:padding="21dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="ТВОЯ ПРОДУКТИВНОСТЬ"
+                    android:textSize="11sp"
+                    android:letterSpacing="0.11"
+                    android:textStyle="bold"
+                    android:textColor="#D3D3FF" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="14dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/tasksDoneValue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="7 / 10"
+                            android:textColor="@android:color/white"
+                            android:textSize="31sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/tasksDoneLabel"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Задач выполнено"
+                            android:textColor="#D9D8FF"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/tasksPercentValue"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:background="@drawable/fp_round_button"
+                        android:gravity="center"
+                        android:text="70%"
+                        android:textColor="@color/fp_primary"
+                        android:textSize="21sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_marginTop="21dp"
+                    android:background="#50508B"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/tasksProgressFill"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="7"
+                        android:background="@drawable/fp_progress_fill" />
+                    <View
+                        android:id="@+id/tasksProgressRest"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="3" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="26dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Мои дела"
+                    android:textColor="@color/fp_ink"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tasksCountLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="10 задач"
+                    android:textColor="@color/fp_muted"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Фильтры -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/filterAll"
+                        style="@style/FocusFilter"
+                        android:text="Все" />
+                    <TextView
+                        android:id="@+id/filterActive"
+                        style="@style/FocusFilter"
+                        android:layout_marginStart="8dp"
+                        android:text="В процессе" />
+                    <TextView
+                        android:id="@+id/filterDone"
+                        style="@style/FocusFilter"
+                        android:layout_marginStart="8dp"
+                        android:text="Готово" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <LinearLayout
+                android:id="@+id/taskContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/createTaskButton"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="18dp"
+                android:background="@drawable/fp_primary_button"
+                android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
+                android:text="+   Новая задача"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:gravity="center"
+                android:text="Твой темп • твои правила ✨"
+                android:textColor="@color/fp_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </ScrollView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/fp_border" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:id="@+id/navHomeFromTasks"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/fp_ic_home"
+                android:contentDescription="Главная" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Главная"
+                android:textColor="@color/fp_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/fp_ic_tasks"
+                android:contentDescription="Задачи" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Задачи"
+                android:textColor="@color/fp_primary"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/tasksNavProfile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/fp_ic_profile"
+                android:contentDescription="Профиль" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Профиль"
+                android:textColor="@color/fp_muted"
+                android:textSize="11sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
